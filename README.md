@@ -45,7 +45,7 @@ sudo yum install docker -y
 sudo service docker start  
 sudo usermod -aG docker ec2-user  
 
-🔹 Step 2: Setup IAM User
+### 🔹 Step 2: Setup IAM User
 Go to IAM → Users → Create user
 
 User name: s3-rds-glue-user
@@ -62,7 +62,7 @@ AWSGlueConsoleFullAccess
 
 Download the Access Key ID and Secret Access Key
 
-🔹 Step 3: Create RDS (MySQL) Database
+### 🔹 Step 3: Create RDS (MySQL) Database
 Go to RDS → Create database
 
 Engine: MySQL
@@ -81,7 +81,7 @@ Port: 3306
 
 Add EC2 Security Group to RDS inbound rules
 
-✅ Create Database and Table in RDS (via EC2):
+### ✅ Create Database and Table in RDS (via EC2):
 
 bash
 Copy code
@@ -91,7 +91,7 @@ mysql -h <RDS-endpoint> -u admin -p
 CREATE DATABASE mydb;
 USE mydb;
 CREATE TABLE students ( id INT, name VARCHAR(50));
-🔹 Step 4: Upload CSV File to S3
+### 🔹 Step 4: Upload CSV File to S3
 Create a new S3 bucket (e.g., my-data-bucket)
 
 Upload a file named data.csv
